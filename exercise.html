@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baiTapBuoi7</title>
+
+    <style>
+        html, body {
+            font-family: Arial;
+            scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        .logo p{
+            color: rgb(18, 156, 110);
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .main-menu-item{
+           list-style: none;
+        }       
+
+        .main-menu-item a{
+            text-decoration: none;
+            color: rgba(35, 31, 31, 0.502);
+            text-transform: capitalize;
+        }
+
+        .main-menu-item-active a{
+            color: rgb(4, 20, 34);
+        }
+
+        .btn {
+            color: rgba(35, 31, 31, 0.502);
+            border-radius: 5px;
+            border: none;
+            padding: 10px;
+            width: 100px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            color: rgb(4, 20, 34);
+            opacity: .9;
+            transition: 0.5s;
+        }
+
+        .btn-info{
+            background: rgba(18, 156, 110, 0.8);
+            color: #fff;
+        }
+
+        .btn-warning{
+            background: rgba(18, 156, 110, 0.8);
+            color: #fff;
+        }
+
+        .banner-description-title{
+            font-weight: bold;
+            font-size: 60px;
+        }
+
+        .banner-description-break{
+            width: 100%;
+            border: 1px solid rgba(18, 156, 110, 0.8);
+            border-top-right-radius: 1000px;
+            border-top-left-radius: 1000px;
+        }
+
+        .banner-description-content{
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .btn-round{
+            border-radius: 50px;
+        }
+
+        .text-grey{
+            color: #aaa;
+        }
+
+        .form-control-input{
+            border: none;
+            border-bottom: 1px solid #aaa;
+        }
+        .btn-sm{
+            padding: 5px;
+            width: 80px;
+            height: 25px;
+            font-size: 14px;
+        }
+
+        img {
+            max-width: 50%;
+        }
+
+        #header,
+        #main {
+            padding: 50px 120px 0 120px;
+        }
+
+        /* CSS header-top */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-menu {
+            min-width: 60%;
+        }
+
+        .main-menu ul {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-top .header-top--right {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 55%;
+        }
+
+        .header-top .logo p {
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        .main-menu a {
+            font-size: 20px;
+        }
+
+        .header-button-group {
+            max-width: 30%;
+        }
+
+        .position-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 120px 0 120px;
+            background-color: #aaa;
+        }
+
+        .header-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 100px;
+        }
+
+        .banner-description {
+            width: 50%;
+        }
+
+        .banner-description-content{
+            font-size: 15px;
+            line-height: 25px;
+            margin-top: 25px;
+        }
+
+        .banner-description-btn{
+            margin-top: 30px;
+        }
+
+        .banner-image-wrap {
+            width: 70%;
+            position: relative;
+            margin-left: 70px;
+        }
+
+        .banner-image-wrap img:first-child {
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .banner-image-wrap img:nth-child(2) {
+            width: 20%;
+            position: absolute;
+            right: 35%;
+            text-align: center;
+            bottom: 10%;
+            transform: rotate(-55deg);
+        }
+
+        .banner-image-wrap form {
+            background-color: #ffeaea;
+            border-radius: 10px;
+            width: 30%;
+            height: 100px;
+            position: absolute;
+            left: 8%;
+            top: 10%;
+        }
+
+        .form-group {
+            padding: 0 10px 0 10px;
+            position: relative;
+        }
+
+        .form-group input {
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            background-color: #ffeaea;
+        }
+
+        .form-group button {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+        }
+
+        .total-income img {
+            width: 40px;
+            position: absolute;
+            right: 5%;
+            text-align: center;
+            bottom: 30%;
+        }
+
+        .total-income p {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .total-income {
+            background-color: #ffeaea;
+            border-radius: 10px;
+            width: 15%;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            padding: 0 10px 0 10px;
+        }
+
+        #analyst {
+            padding-top: 100px;
+        }
+
+        #analyst h2 {
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        #analyst .analyst-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+            grid-template-rows: 1fr 1fr;
+            padding-bottom: 50px;
+        }
+
+        #analyst .analyst-top div {
+            display: flex;
+        }
+
+        #analyst .analyst-top div p {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        #analyst .analyst-top div img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        #analyst .analyst-bottom {
+            padding-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #aaaaaa43;
+            width: calc(100% + 240px);
+            margin-left: -120px;
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+
+        .analyst-bottom--left {
+            position: relative;
+        }
+
+        .analyst-bottom--left p:first-child,
+        .analyst-bottom--left p:nth-child(2) {
+            width: 80%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .analyst-bottom--left p:first-child {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .analyst-bottom--left p:nth-child(2) {
+            font-size: 15px;
+            font-weight: bold;
+            color: #aaa;
+            margin-top: 40px;
+        }
+
+        .analyst-bottom--left .star {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .analyst-bottom--left .star-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #aaa;
+        }
+
+
+        .fa-star {
+            color: #aaa;
+        }
+
+        .checked {
+            color: orange;
+        }
+
+        .rating {
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .rating div:first-child {
+            margin-right: 50px;
+        }
+
+        .bottom--right---item {
+            display: flex;
+            align-items: flex-start;
+            padding: 50px 0;
+            height: 160px;
+        }
+
+        .bottom--right---item:first-child {
+            padding-top: 0;
+        }
+
+        .bottom--right---item img {
+            width: 50px;
+            background-color: #FFF;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 30px;
+        }
+
+        .item-descript {
+            width: 95%;
+        }
+
+        .item-descript h1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .item-descript p {
+            font-size: 10px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 10;
+            padding: 0;
+        }
+
+        #feature {
+            padding-top: 100px;
+        }
+
+        .feature-header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .feature-header h1 {
+            width: 80%;
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 60px;
+        }
+
+        .feature-header p {
+            width: 60%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #aaa;
+            margin-left: 30px;
+            padding: 0;
+            line-height: 27px;
+        }
+
+        .feature-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .feature-body .feature-body--img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feature-body h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+
+        .feature-body p {
+            width: 70%;
+            font-size: 20px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding-top: 20px;
+            padding-left: 40px;
+        }
+
+        #benifit {
+            padding-top: 100px;
+            display: flex;
+        }
+
+        #benifit li {
+            list-style: none;
+            background-image: url(./images/check.png);
+            background-repeat: no-repeat;
+            background-position: 5px;
+            line-height: 55px;
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .benifit-left {
+            width: 50%;
+            padding-right: 50px;
+        }
+
+        .benifit-left h1 {
+            width: 80%;
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 60px;
+        }
+
+        .benifit-left ul {
+            font-size: 17px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .benifit-right {
+            position: relative;
+            width: 70%;
+        }
+
+        .benifit-right .img-center {
+            position: absolute;
+            right: 50px;
+            top: 50px;
+        }
+
+        .benifit-right--header {
+            width: 50%;
+            height: 120px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #aaaaaa43;
+            border-radius: 10px;
+        }
+
+        .benifit-right--header div:first-child,
+        .benifit-right--header div:last-child {
+            width: 30%;
+            margin-left: 30px;
+        }
+
+        .benifit-right--header .img-first,
+        .benifit-right--header .img-last {
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .benifit-right--header .descript {
+            width: 70%;
+        }
+
+        .benifit-right--header h3 {
+            font-size: 17px;
+            font-weight: bold;
+            margin: 0;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        .benifit-right--header p {
+            font-size: 12px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding-left: 30px;
+            }
+
+        .benifit-right--body {
+            width: 30%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: #aaaaaa43;
+            border-radius: 10px;
+            margin-top: 50px;
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+
+        .benifit-right--body .img {
+            width: 80px;
+            border-radius: 50%;
+            margin-left: 30px;
+        }
+
+        .benifit-right--body h1 {
+            font-size: 17px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .benifit-right--body p {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+            padding-left: 30px;
+        }
+
+        .benifit-right--footer {
+            width: 50%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #aaaaaa43;
+            border-radius: 10px;
+            margin-top: 50px;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .benifit-right--footer img {
+            width: 70px;
+            border-radius: 50%;
+        }
+
+        .benifit-right--footer p {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        #plan {
+            padding-top: 100px;
+        }
+
+        #plan li {
+            list-style: none;
+            background-image: url(./images/check.png);
+            background-repeat: no-repeat;
+            background-position: 5px;
+            line-height: 55px;
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .plan-header h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 20px;
+        }
+
+        .plan-header p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding: 40px 0;
+        }
+
+        .plan-header div {
+            background-color: #aaaaaa43;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .plan-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            justify-items: center;
+        }
+
+        .plan-body--item {
+            background-color: #aaaaaa43;
+            padding: 20px;
+            border-radius: 20px;
+            width: 95%;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .plan-body--item h1 {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .plan-body--item p {
+            width: 80%;
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .plan-body--item p span{
+            text-align: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .plan-body--item .item-descript{
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #fff;
+            margin: 0;
+            border-radius: 10px;
+            padding: 20px 20px 20px 0;
+        }
+
+        .plan-body--item .btn {
+            color: rgb(18, 156, 110);
+            font-weight: bold;
+            font-size: 20px;
+            width: 75%;
+            height: 50px;
+        }
+
+        .plan-body--item:hover {
+            background-color: rgb(18, 156, 110);
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            transform: scale(1.1);
+        }
+
+        .plan-body--item:hover .btn {
+            background-color: rgb(18, 156, 110);
+            color: #fff;
+        }
+
+        .plan-body--item:hover h1,
+        .plan-body--item:hover p,
+        .plan-body--item:hover span {
+            color: #fff;
+        }
+
+        #contact {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            display: flex;
+            background-color: #2C3F46;
+            width: calc(100% + 240px);
+            margin-left: -120px;
+            padding-left: 120px;
+            padding-right: 120px;
+            justify-content: space-between;
+        }
+
+        .contact-left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .contact-left h1 {
+            width: 90%;
+            font-size: 55px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-left p {
+            width: 60%;
+            font-size: 15px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            padding: 25px 0;
+        }
+
+        .contact-left div {
+            width: 60%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .contact-left div img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .contact-right {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #aaaaaa83;
+            border-radius: 20px;
+        }
+
+        .contact-right--header {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+        }
+
+        .contact-right--header img {
+            width: 150px;
+        }
+
+        .contact-right--header h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        .contact-right--body {
+            width: 70%;
+        }
+
+        .contact-right--body form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-right--body form label {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+         padding-bottom: 20px;
+        }
+
+        .contact-right--body form input,
+        .contact-right--body form textarea {
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .contact-right--body form input {
+            height: 50px;
+        }
+
+        .contact-right--body form textarea {
+            height: 80px;
+            padding: 10px;
+        }
+
+        .contact-right--body form button {
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(18, 156, 110);
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-right--body form button:hover {
+            color: #FFF;
+            opacity: 0.7;
+        }
+
+        .contact-right--body form div {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+        .contact-right--body form span {
+            font-size: 15px;
+            font-weight: bold;
+            color: #aaa;
+            margin: 0;
+            margin-right: 5px;
+        }
+
+        .contact-right--body form a {
+            font-size: 15px;
+            font-weight: bold;
+                color: #fff;
+            margin: 0;
+            text-decoration: none;
+        }
+
+        #footer {
+            background-color: #2C3F46;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+        }
+
+        #footer a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        #footer li {
+            list-style: none;
+            padding: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        .footer-header {
+            width: calc(100% - 240px);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-header .title {
+            font-size: 17px;
+            color: #aaa;
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        .footer-header .email {
+            position: relative;
+        }
+
+        .footer-header input {
+            width: 300px;
+            height: 50px;
+            border-radius: 30px;
+            border: none;
+            padding-left: 15px;
+        }
+
+        .footer-header svg {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            color: #aaa;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        .footer-link {
+            width: 50%;
+            margin-right: 50px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 50px;
+        }
+
+        .footer-body {
+            width: calc(100% - 240px);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="header-top">
+        <!-- top head -->
+        <div class="logo">
+          <p>Biccas</p>
+        </div>
+        <div class="header-top--right">
+          <!--  menu -->
+          <nav class="main-menu">
+            <ul>
+              <li class="main-menu-item"><a href="#">home</a></li>
+              <li class="main-menu-item">
+                <a href="#analyst">Product</a>
+              </li>
+              <li class="main-menu-item"><a href="#contact">FAQ</a></li>
+              <li class="main-menu-item"><a href="#feature">Blog</a></li>
+              <li class="main-menu-item"><a href="#plan">About Us</a></li>
+            </ul>
+          </nav>
+
+          <!-- button -->
+
+          <div class="header-button-group">
+            <button class="btn btn-danger">Login</button>
+            
+          </div>
+          <div><button class="btn btn-info">Sign up</button></div>
+        </div>
+      </div>
+      <!-- bot head -->
+      <div class="header-bottom">
+        <!-- left -->
+        <div class="banner-description">
+          <p class="banner-description-title">
+            We're here to Increase your Productivity
+          </p>
+          <div class="banner-description-break"></div>
+
+          <p class="banner-description-content">
+            Let's make your work more ozganize and easily using the Taskio Dashboard with many of the latest featuresin managing work every day.
+          </p>
+          <div class="banner-description-btn">
+            <button class="btn btn-warning btn-round">Try Free Trial</button>
+            <button class="btn">View Demo</button>
+          </div>
+        </div>
+
+        <!-- right -->
+
+        <div class="banner-image-wrap">
+          <img src="images/person.png" alt="Header bottom right img" />
+
+          <img src="images/card.png" alt="Credit card" />
+          <form action="">
+            <div class="form-group">
+              <p class="text-grey">Enter amount</p>
+              <input class="form-control-input" type="text" value="$450.00" />
+              <button class="btn btn-info btn-round btn-sm">Send</button>
+            </div>
+          </form>
+          <div class="total-income">
+            <p class="text-grey">Total Income</p>
+            <p>$250.00</p>
+            <img src="images/analyst.png" alt="icon" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <main id="main">
+      <!-- Part 1 -->
+      <section id="analyst">
+        <h2>More than 25,000 teams use Collabs</h2>
+
+        <div class="analyst-top">
+          <div>
+            <img src="images/mac.png" alt="Company Icon" />
+            <p class="text-grey">Unsplash</p>
+          </div>
+          <div>
+            <img src="images/mac.png" alt="Company Icon" />
+            <p class="text-grey">Notion</p>
+          </div>
+          <div>
+            <img src="images/mac.png" alt="Company Icon" />
+            <p class="text-grey">Intercom</p>
+          </div>
+          <div>
+            <img src="images/mac.png" alt="Company Icon" />
+            <p class="text-grey">Descript</p>
+          </div>
+          <div>
+            <img src="images/mac.png" alt="Company Icon" />
+            <p class="text-grey">Grammarly</p>
+          </div>
+        </div>
+
+        <div class="analyst-bottom">
+          <div class="analyst-bottom--left">
+            <p>How we support our pratner all over the world</p>
+            <p>
+              SaaS become a common delivery model for many business applications,
+              including office & messaging software, DBMS software, management software
+            </p>
+
+            <div class="rating">
+              <!-- rating -->
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <p class="star">4.9/5 rating</p>
+                <p class="star-title">Databricks</p>
+              </div>
+              <div>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <p class="star">4.8/5 rating</p>
+                <p class="star-title">Chainalysis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="analyst-bottom--right">
+            <div class="bottom--right---item">
+              <img src="images/analyst.png" alt="star icon" />
+              <div class="item-descript">
+                <h3>Pushlishing</h3>
+                <p>
+                  Plan, collaborate, and publish thumb-stopping content that
+                  drives meaningful engagement and growth for your brand
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom--right---item">
+              <img src="images/analyst.png" alt="star icon" />
+              <div class="item-descript">
+                <h3>Analytics</h3>
+                <p>
+                  Analyze your performance and create gorgeous report
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom--right---item">
+              <img src="images/analyst.png" alt="star icon" />
+              <div class="item-descript">
+                <h3>Engagement</h3>
+                <p>
+                  Quickly navigate you and engage with your audience
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 2 -->
+      <section id="feature">
+        <div class="feature-header">
+          <div>
+            <h1>
+              Our Features you cab get
+            </h1>
+          </div>
+          <div>
+            <p>
+              We offer a variety of interesting features that 
+              you can help increase your productivity at work
+              and manage your project easily
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-info btn-round">Get Started</button>
+          </div>
+        </div>
+        <div class="feature-body">
+          <div>
+            <div class="feature-body--img">
+              <img src="images/mac.png" alt="Logo" />
+            </div>
+            <h1>Colloboration Teams</h1>
+            <p>
+              Here you can handle project together with team virtually
+            </p>
+          </div>
+          <div>
+            <div class="feature-body--img">
+              <img src="images/mac.png" alt="Logo" />
+            </div>
+            <h1>Cloud Storage</h1>
+            <p>
+              No need to worry about storage, because we provide cloud storage
+              up to 2 TB
+            </p>
+          </div>
+          <div>
+            <div class="feature-body--img">
+              <img src="images/mac.png" alt="Logo" />
+            </div>
+            <h1>Daily Analytics</h1>
+            <p>
+              We always provide useful information to make it easier for you
+              every day
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 3 -->
+      <section id="benifit">
+        <div class="benifit-left">
+          <h1>What Benifit Will You Get</h1>
+          <ul>
+            <li>Free Consulting With Experet Saving Money</li>
+            <li>Online Banking</li>
+            <li>Investment Report Every Month</li>
+            <li>Saving Money For The Future</li>
+            <li>Online Transection</li>
+          </ul>
+        </div>
+        <div class="benifit-right">
+          <img src="images/mac.png" alt="imgage Part 3" class="img-center"/>
+
+          <div class="benifit-right--header">
+            <img class="img-first" src="images/person.png" alt="Icon Persion" />
+            
+            <div class="descript">
+              <h3>Anmada Young</h3>
+              <p>Expert Saving Money</p>
+            </div>
+            <img class="img-last" src="images/person.png" alt="icon message" />
+            
+          </div>
+
+          <div class="benifit-right--body">
+            <div>
+              <h1>Total Income</h1>
+              <p>240$</p>
+            </div>
+            <div class="img"><img src="images/analyst.png" alt="Icon grouth up" /></div>
+          </div>
+          
+          <div class="benifit-right--footer">
+            <div><img src="images/check.png" alt="Icon " /></div>
+            <p>Money Tranfer success</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 4 -->
+      <section id="plan">
+        <div class="plan-header">
+          <h1>Choose plan</h1>
+          <h1>That's right for you</h1>
+          <p>Choose plan that works best for you, feel free to contact us</p>
+          <div>
+            <button class="btn">Bill Monthly</button>
+            <button class="btn btn-info">Bill Yearly</button>
+          </div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-body--item">
+            <h1>Free</h1>
+            <p>Have a go and test your supperpowers</p>
+            <p><span>$0</span></p>
+            <div class="item-descript">
+              <ul>
+                <li>2 Users</li>
+                <li>32 Files</li>
+                <li>Public Share & Comments</li>
+                <li>Chat Support</li>
+                <li>New income apps</li>
+              </ul>
+              <div>
+                <button class="btn">Sign for free</button>
+              </div>
+            </div>
+          </div>
+          <div class="plan-body--item">
+            <h1>Pro</h1>
+            <p>Experiment the power of infinite possibilities</p>
+            <p><span>$8</span></p>
+            <div class="item-descript">
+              <ul>
+                <li>4 Users</li>
+                <li>All apps</li>
+                <li>Unlimited editable exports</li>
+                <li>Folders and collaboration</li>
+                <li>All incoming apps</li>
+              </ul>
+              <div>
+                <button class="btn">Go to pro</button>
+              </div>
+            </div>
+          </div>
+          <div class="plan-body--item">
+            <h1>Business</h1>
+            <p>Unveil new superpowers and join the Design Leaque</p>
+            <p><span>$16</span></p>
+            <div class="item-descript">
+              <ul>
+                <li>All the features of pro plan</li>
+                <li>Account success Manager</li>
+                <li>Single Sign-On (SSO)</li>
+                <li>Co-conception program</li>
+                <li>collaboration-Soon</li>
+              </ul>
+              <div>
+                <button class="btn">Go to business</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Part 5 -->
+      <section id="contact">
+        <div class="contact-left">
+          <h1>
+            People are Saying About DoWhith
+          </h1>
+          <p>
+            Everything you need to accept to payment and grow your 
+            money of manage anywhere on planet
+          </p>
+          <h1>//</h1>
+
+          <p>
+            I am very helped by this E-wallet application, my days are very easy to use this application
+            and its very helpful in my life, even I can pay a short time 
+          </p>
+          <p>_huyhq</p>
+
+          <div>
+            <a href=""><img src="images/person.png" alt="Profile Image" /></a>
+            <a href=""><img src="images/person.png" alt="Profile Image" /></a>
+            <a href=""><img src="images/person.png" alt="Profile Image" /></a>
+            <a href=""><img src="images/person.png" alt="Profile Image" /></a>
+            <a href=""><img src="images/person.png" alt="Profile Image" /></a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="contact-right--header">
+            <img src="images/mac.png" alt="Databricks" />
+            <h2>Get Started</h2>
+          </div>
+
+          <div class="contact-right--body">
+            <form action="">
+              <label for="">Email</label>
+              <input type="text" placeholder="Enter your email" />
+
+              <label for="">Message</label>
+              <textarea rows="2" placeholder="What are you say?"></textarea>
+              
+              <button class="btn btn-info">Request Demo</button>
+              
+              <div>
+                <span>or</span>
+                <a href=""> Start Free Trial</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer id="footer">
+      <div class="footer-header">
+        <div>
+          <div class="logo">
+            <p>Biccas</p>
+          </div>
+          <p class="title">
+            Get started now try our product
+          </p>
+          <div class="email">
+            <input type="text" placeholder="Enter your email here" />
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#129c6e}</style><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
+          </div>
+        </div>
+        <div class="footer-link">
+          <nav>
+            <ul>
+              <li><a href="">Support</a></li>
+              <li><a href="">Help center</a></li>
+              <li><a href="">Account information</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contactus</a></li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li><a href="">Help And Solution</a></li>
+              <li><a href="">Talk to support</a></li>
+              <li><a href="">Support docs</a></li>
+              <li><a href="">System status</a></li>
+              <li><a href="">Covid responde</a></li>
+            </ul>
+          </nav>
+          <nav>
+            <ul>
+              <li><a href="">Product</a></li>
+              <li><a href="">Update</a></li>
+              <li><a href="">HomSecuritye</a></li>
+              <li><a href="">Beta test</a></li>
+              <li><a href="">Pricing product</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-body">
+        <p>2022 Biccas Inc. Copyright and rights reserved</p>
+        <div>
+          <a href="">Terms and Conditions</a>
+          *
+          <a href="">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.onscroll = function() {sCrollHeader()};
+
+      function sCrollHeader() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          document.querySelector('.header-top').classList.add('position-fixed');
+        } else {
+          document.querySelector('.header-top').classList.remove('position-fixed');
+        }
+      }
+
+      let menuItems = document.querySelectorAll('.main-menu-item');
+      menuItems.forEach((item) => {
+        item.addEventListener('click', function() {
+          menuItems.forEach((item) => {
+            item.classList.remove('main-menu-item-active');
+          })
+          this.classList.add('main-menu-item-active');
+        })
+      })
+    </script>
+  </body>
+</html>
